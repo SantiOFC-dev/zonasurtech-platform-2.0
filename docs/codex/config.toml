@@ -1,0 +1,40 @@
+model = "gpt-5-codex"
+model_reasoning_effort = "medium"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+[execution]
+command_timeout_ms = 120000
+network_access = "restricted"
+
+[security]
+redact_env = true
+log_prompts = false
+max_file_read_kb = 512
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp@latest"]
+startup_timeout_ms = 20000
+tool_timeout_ms = 45000
+
+[mcp_servers.openai_docs]
+command = "npx"
+args = ["-y", "@openai/docs-mcp@latest"]
+startup_timeout_ms = 20000
+tool_timeout_ms = 45000
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["-y", "@playwright/mcp@latest"]
+startup_timeout_ms = 30000
+tool_timeout_ms = 120000
+
+[mcp_servers.zonasur]
+url = "http://localhost:3005/mcp"
+startup_timeout_ms = 15000
+tool_timeout_ms = 30000
+
+[mcp_servers.zonasur.http_headers]
+X-API-KEY = "dev-local-key"
+X-TENANT-ID = "tenant_default"

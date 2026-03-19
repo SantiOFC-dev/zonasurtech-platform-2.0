@@ -1,0 +1,16 @@
+interface:
+  display_name: "ZonaSurTech Operator"
+  short_description: "Automatiza operaciones de negocio en el SaaS"
+  icon_small: "./assets/icon.svg"
+  brand_color: "#2563eb"
+
+policy:
+  allow_implicit_invocation: true
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "zonasur"
+      description: "ZonaSurTech MCP Server"
+      transport: "streamable_http"
+      url: "http://localhost:3005/mcp"

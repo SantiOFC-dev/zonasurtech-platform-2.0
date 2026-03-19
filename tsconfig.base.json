@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@zs/contracts": ["packages/contracts/src/index.ts"],
+      "@zs/contracts/*": ["packages/contracts/src/*"],
+      "@zs/module-registry": ["packages/module-registry/src/index.ts"],
+      "@zs/module-registry/*": ["packages/module-registry/src/*"],
+      "@zs/design-tokens": ["packages/design-tokens/src/tokens.ts"],
+      "@zs/design-tokens/*": ["packages/design-tokens/src/*"]
+    }
+  }
+}

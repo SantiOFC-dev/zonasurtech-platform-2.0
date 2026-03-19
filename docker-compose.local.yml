@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  zonasur-mcp-local:
+    build:
+      context: .
+      dockerfile: apps/mcp-zonasur/Dockerfile
+    container_name: zonasur-mcp-local
+    env_file:
+      - apps/mcp-zonasur/.env
+    ports:
+      - "3005:3005"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3005/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s

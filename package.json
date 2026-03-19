@@ -1,0 +1,19 @@
+{
+  "name": "zonasurtech-platform",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.12.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm --filter @zs/platform-web dev",
+    "dev:mcp": "pnpm --filter @zs/mcp-zonasur dev",
+    "build": "pnpm --filter @zs/platform-web build",
+    "build:mcp": "pnpm --filter @zs/mcp-zonasur build",
+    "lint": "pnpm --filter @zs/platform-web lint",
+    "typecheck": "pnpm --filter @zs/platform-web typecheck",
+    "typecheck:mcp": "pnpm --filter @zs/mcp-zonasur typecheck"
+  }
+}
